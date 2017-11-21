@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="styleManagingApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Style Managing</title>
+    <script src="../Libraries/angular.js"></script>
+    <script src="styleManaging.js"></script>
+    <script src="styleManagingModel.js"></script>
+    <link href="styleManagingStyleSheet.css" rel="stylesheet" />
+    
+</head>
+<body ng-controller="styleManagingAppCtrl">
+    <div ng-repeat="className in data.classNames" style="margin:5px">
+        <button ng-click="classInUse(className.value)">Use {{className.className}}</button>
+    </div>
+    <div ng-class="selectedClass">
+        Karl u Klary ukral koraly (padlo).<br />
+        A Klara u Karla ukrala klarnet (shmara).<br />
+    </div>
+</body>
+</html>

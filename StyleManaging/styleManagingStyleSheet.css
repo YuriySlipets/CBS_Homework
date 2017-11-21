@@ -1,0 +1,17 @@
+﻿.firstClass {
+    color: darkred;
+    width:340px;
+    
+}
+.secondClass {
+    color: darkred;
+    font-size: 20px;
+    width: 340px;
+}
+.thirdClass {
+    color: darkred;
+    font-size: 20px;
+    border: 3px solid darkmagenta;
+    width: 340px;
+}
+

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html ng-app="questApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz</title>
+
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="quizModel.js"></script>
+    <script src="questApp.js"></script>
+
+</head>
+<body>
+    <div class="container" ng-controller="questAppCtrl">
+        <div class="panel panel-default">
+            <h1 class="panel-heading">Here we have some questions for you!</h1>
+            <div class="panel-body">
+
+                <h3>Show questions:</h3>
+
+                <div>
+                    <label>1.<input type="radio" name="show-questions" value="firstQuestion" ng-model="questionSelection" /></label>
+                    <label>2.<input type="radio" name="show-questions" value="secondQuestion" ng-model="questionSelection" /></label>
+                    <label>3.<input type="radio" name="show-questions" value="thirdQuestionn" ng-model="questionSelection" /></label>
+                    <label>4.<input type="radio" name="show-questions" value="fourthQuestion" ng-model="questionSelection" /></label>
+                    <label>5.<input type="radio" name="show-questions" value="fifthQuestion" ng-model="questionSelection" /></label>
+                </div>
+
+                <div ng-switch="questionSelection">
+                    <article class="well" ng-switch-when="firstQuestion">
+                        <p>{{quizModel.questions[0].question}}</p>
+                        <label ng-repeat="answer in quizModel.questions[0].answers"><input type="radio" name="first-question" ng-value="answer.id" ng-model="questionAnswers[0]" />{{answer.value}}</label>
+                        <button type="submit" class="btn btn-primary" ng-click="firstQuestionAnswer()" ng-disabled="firstQuestionAnswerEnable">Answer</button>
+                    </article>
+
+                    <article class="well" ng-switch-when="secondQuestion">
+                        <p>{{quizModel.questions[1].question}}</p>
+                        <label ng-repeat="answer in quizModel.questions[1].answers"><input type="radio" name="second-question" ng-value="answer.id" ng-model="questionAnswers[1]" />{{answer.value}}</label>
+                        <button type="submit" class="btn btn-primary" ng-click="secondQuestionAnswer()" ng-disabled="secondQuestionAnswerEnable">Answer</button>
+                    </article>
+
+                    <article class="well" ng-switch-when="thirdQuestionn">
+                        <p>{{quizModel.questions[2].question}}</p>
+                        <label ng-repeat="answer in quizModel.questions[2].answers"><input type="radio" name="third-question" ng-value="answer.id" ng-model="questionAnswers[2]" />{{answer.value}}</label>
+                        <button type="submit" class="btn btn-primary" ng-click="thirdQuestionAnswer()" ng-disabled="thirdQuestionAnswerEnable">Answer</button>
+                    </article>
+
+                    <article class="well" ng-switch-when="fourthQuestion">
+                        <p>{{quizModel.questions[3].question}}</p>
+                        <label ng-repeat="answer in quizModel.questions[3].answers"><input type="radio" name="first-question" ng-value="answer.id" ng-model="questionAnswers[3]" />{{answer.value}}</label>
+                        <button type="submit" class="btn btn-primary" ng-click="fourthQuestionAnswer()" ng-disabled="fourthQuestionAnswerEnable">Answer</button>
+                    </article>
+
+                    <article class="well" ng-switch-when="fifthQuestion">
+                        <p>{{quizModel.questions[4].question}}</p>
+                        <label ng-repeat="answer in quizModel.questions[4].answers"><input type="radio" name="first-question" ng-value="answer.id" ng-model="questionAnswers[4]" />{{answer.value}}</label>
+                        <button type="submit" class="btn btn-primary" ng-click="fifthQuestionAnswer()" ng-disabled="fifthQuestionAnswerEnable">Answer</button>
+                    </article>
+
+                </div>
+                <div>
+                    <h3>Here is your score: {{count}}</h3>
+                    <span>Array of your answers {{questionAnswers}}</span>
+                    <span>Array of right answers{{rightAnswers}}</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

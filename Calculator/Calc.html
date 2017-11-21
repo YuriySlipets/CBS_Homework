@@ -1,0 +1,37 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="Calculator">
+<head>
+    <title>Calculator</title>
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    
+    <script src="calculator.js"></script>
+    
+</head>
+<body>
+    <div ng-controller="calcCtrl" class="panel-default panel">
+        <div>
+            <label>
+                Enter first number:
+                <input type="number" ng-model="firsNumber" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Enter second number:
+                <input type="number" ng-model="secondNumber" />
+            </label>
+        </div>
+        <div>
+            <button class="btn btn-primary" ng-click="plusBtn()">+</button>
+            <button class="btn btn-primary" ng-click="minusBtn()">-</button>
+            <button class="btn btn-primary" ng-click="multiplyBtn()">*</button>
+            <button class="btn btn-primary" ng-click="divisionBtn()">/</button>
+        </div>
+        <div >
+            {{result}}
+        </div>
+    </div>
+
+</body>
+</html>
